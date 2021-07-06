@@ -23,7 +23,7 @@ const themes = {
     text: {
       info: "hsl(0, 0, 100%)",
       result: "hsl(0, 0, 100%)",
-      numbers: "hsl(221, 14%, 31%)",
+      number: "hsl(221, 14%, 31%)",
       funcKey: "hsl(0, 0, 100%)",
       resultKey: "hsl(0, 0, 100%)",
     },
@@ -53,7 +53,7 @@ const themes = {
     text: {
       info: "hsl(60, 10%, 19%)",
       result: "hsl(60, 10%, 19%)",
-      numbers: "hsl(60, 10%, 19%)",
+      number: "hsl(60, 10%, 19%)",
       funcKey: "hsl(0, 0, 100%)",
       resultKey: "hsl(0, 0, 100%)",
     },
@@ -81,9 +81,9 @@ const themes = {
       },
     },
     text: {
-      info: "hsl(221, 14%, 31%)",
+      info: "hsl(52, 100%, 62%)",
       result: "hsl(221, 14%, 31%)",
-      numbers: "hsl(221, 14%, 31%)",
+      number: "hsl(52, 100%, 62%)",
       funcKey: "hsl(0, 0, 100%)",
       resultKey: "hsl(198, 20%, 13%)",
     },

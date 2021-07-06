@@ -6,10 +6,10 @@ import GlobalStyles from "./theme/GlobalStyles";
 
 function App() {
   return (
-    <ThemeProvider theme={themes.purple}>
+    <ThemeProvider theme={themes.blue}>
       <GlobalStyles />
       <div className="App">
-        <NumberButton>Del</NumberButton>
+        <NumberButton>.</NumberButton>
         <h2>dummy</h2>
       </div>
     </ThemeProvider>

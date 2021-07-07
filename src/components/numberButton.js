@@ -7,7 +7,7 @@ const NumButton = Styled(Button)`
   border-bottom: 4px solid ${(props) => props.theme.keys.number.shadow};
   color: ${(props) => props.theme.text.number};
 `;
-const NumberButton = ({ children, clickHandler }) => {
+const NumberButton = ({ children, clickHandler, className }) => {
   const [clicked, setClicked] = useState(false);
   const handleClick = () => {
     setClicked(true);
@@ -19,7 +19,7 @@ const NumberButton = ({ children, clickHandler }) => {
     }
   }, [clicked]);
   return (
-    <NumButton onClick={handleClick} clicked={clicked}>
+    <NumButton onClick={handleClick} clicked={clicked} className={className}>
       {children}
     </NumButton>
   );

@@ -1,7 +1,7 @@
 const themes = {
   blue: {
     backgrounds: {
-      body: "hsl(224, 36%, 15%)",
+      body: "hsl(222, 26%, 31%)",
       keypad: "hsl(223, 31%, 20%)",
       toggleBox: "hsl(223, 31%, 20%)",
       screen: "hsl(224, 36%, 15%)",
@@ -25,6 +25,7 @@ const themes = {
       result: "hsl(0, 0%, 100%)",
       number: "hsl(221, 14%, 31%)",
       function: "hsl(0, 0%, 100%)",
+      screen: "hsl(0, 0%, 100%)",
     },
     toggleSwitch: "hsl(0, 0%, 100%)",
   },
@@ -54,6 +55,7 @@ const themes = {
       result: "hsl(0, 0%, 100%)",
       number: "hsl(60, 10%, 19%)",
       function: "hsl(0, 0%, 100%)",
+      screen: "hsl(60, 10%, 19%)",
     },
     toggleSwitch: "hsl(0, 0%, 100%)",
   },
@@ -83,6 +85,7 @@ const themes = {
       result: "hsl(198, 20%, 13%)",
       number: "hsl(52, 100%, 62%)",
       function: "hsl(0, 0%, 100%)",
+      screen: "hsl(52, 100%, 62%)",
     },
     toggleSwitch: "hsl(198, 20%, 13%)",
   },

@@ -6,6 +6,7 @@ import { ThemeProvider } from "styled-components";
 import themes from "./theme/themes";
 import GlobalStyles from "./theme/GlobalStyles";
 import Keypad from "./elements/keypad";
+import Screen from "./elements/screen";
 import keys from "./keys";
 
 function App() {
@@ -14,18 +15,25 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <div className="App">
-        <Keypad>
-          {keys.map((val, index) => {
-            if (val.text === "RESET" || val.text === "=") {
-              return <LongButton key={index} type={val.value}>{val.text}</LongButton>;
-            }
-            return (
-              <NumberButton key={index} value={val.value}>
-                {val.text}
-              </NumberButton>
-            );
-          })}
-        </Keypad>
+        <div className="calculator">
+          <Screen>324,523</Screen>
+          <Keypad>
+            {keys.map((val, index) => {
+              if (val.text === "RESET" || val.text === "=") {
+                return (
+                  <LongButton key={index} type={val.value}>
+                    {val.text}
+                  </LongButton>
+                );
+              }
+              return (
+                <NumberButton key={index} value={val.value}>
+                  {val.text}
+                </NumberButton>
+              );
+            })}
+          </Keypad>
+        </div>
         <NumberButton clickHandler={() => setTheme(themes.blue)}>
           blue
         </NumberButton>

@@ -21,13 +21,12 @@ const themes = {
       },
     },
     text: {
-      info: "hsl(0, 0, 100%)",
-      result: "hsl(0, 0, 100%)",
+      info: "hsl(0, 0%, 100%)",
+      result: "hsl(0, 0%, 100%)",
       number: "hsl(221, 14%, 31%)",
-      funcKey: "hsl(0, 0, 100%)",
-      resultKey: "hsl(0, 0, 100%)",
+      function: "hsl(0, 0%, 100%)",
     },
-    toggleSwitch: "hsl(0, 0, 100%)",
+    toggleSwitch: "hsl(0, 0%, 100%)",
   },
   white: {
     backgrounds: {
@@ -52,12 +51,11 @@ const themes = {
     },
     text: {
       info: "hsl(60, 10%, 19%)",
-      result: "hsl(60, 10%, 19%)",
+      result: "hsl(0, 0%, 100%)",
       number: "hsl(60, 10%, 19%)",
-      funcKey: "hsl(0, 0, 100%)",
-      resultKey: "hsl(0, 0, 100%)",
+      function: "hsl(0, 0%, 100%)",
     },
-    toggleSwitch: "hsl(0, 0, 100%)",
+    toggleSwitch: "hsl(0, 0%, 100%)",
   },
   purple: {
     backgrounds: {
@@ -82,10 +80,9 @@ const themes = {
     },
     text: {
       info: "hsl(52, 100%, 62%)",
-      result: "hsl(176, 100%, 44%)",
+      result: "hsl(198, 20%, 13%)",
       number: "hsl(52, 100%, 62%)",
-      funcKey: "hsl(281, 89%, 26%)",
-      resultKey: "hsl(198, 20%, 13%)",
+      function: "hsl(0, 0%, 100%)",
     },
     toggleSwitch: "hsl(198, 20%, 13%)",
   },

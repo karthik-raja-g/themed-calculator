@@ -65,11 +65,11 @@ const keys = [
   },
   {
     text: "RESET",
-    value: "reset",
+    value: "function",
   },
   {
     text: "=",
-    value: "equals",
+    value: "result",
   },
 ];
 export default keys;

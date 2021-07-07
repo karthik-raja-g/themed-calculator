@@ -17,9 +17,13 @@ function App() {
         <Keypad>
           {keys.map((val, index) => {
             if (val.text === "RESET" || val.text === "=") {
-              return <LongButton type={val.value}>{val.text}</LongButton>;
+              return <LongButton key={index} type={val.value}>{val.text}</LongButton>;
             }
-            return <NumberButton key={index}>{val.text}</NumberButton>;
+            return (
+              <NumberButton key={index} value={val.value}>
+                {val.text}
+              </NumberButton>
+            );
           })}
         </Keypad>
         <NumberButton clickHandler={() => setTheme(themes.blue)}>

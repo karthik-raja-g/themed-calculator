@@ -3,12 +3,18 @@ import Button from "./button";
 import Styled from "styled-components";
 
 const NumButton = Styled(Button)`
-  background-color: ${(props) => props.theme.keys.number.body};
-  border-bottom: 4px solid ${(props) => props.theme.keys.number.shadow};
+  background-color: ${(props) =>
+    props.value === "del"
+      ? props.theme.keys.function.body
+      : props.theme.keys.number.body};
+  border-bottom: 4px solid ${(props) =>
+    props.value === "del"
+      ? props.theme.keys.function.shadow
+      : props.theme.keys.number.shadow};
   color: ${(props) => props.theme.text.number};
 `;
-const NumberButton = ({ children, clickHandler, className }) => (
-  <NumButton clickHandler={clickHandler} className={className}>
+const NumberButton = ({ children, clickHandler, className, value }) => (
+  <NumButton clickHandler={clickHandler} className={className} value={value}>
     {children}
   </NumButton>
 );

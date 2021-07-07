@@ -82,9 +82,9 @@ const themes = {
     },
     text: {
       info: "hsl(52, 100%, 62%)",
-      result: "hsl(221, 14%, 31%)",
+      result: "hsl(176, 100%, 44%)",
       number: "hsl(52, 100%, 62%)",
-      funcKey: "hsl(0, 0, 100%)",
+      funcKey: "hsl(281, 89%, 26%)",
       resultKey: "hsl(198, 20%, 13%)",
     },
     toggleSwitch: "hsl(198, 20%, 13%)",

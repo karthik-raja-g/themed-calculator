@@ -7,7 +7,6 @@ export default Styled.button`
   background-color: red;
   outline: none;
   height: 55px;
-  width: 85px;
   font-size: 1.25rem;
   display: flex;
   justify-content: center;

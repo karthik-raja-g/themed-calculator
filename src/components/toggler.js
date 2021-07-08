@@ -11,6 +11,8 @@ const ToggleContainer = styled.div`
   padding: 5px;
   box-sizing: border-box;
   margin: 5px 0;
+  display: flex;
+  cursor: pointer;
 `;
 
 const Switch = styled.div`
@@ -22,7 +24,7 @@ const Switch = styled.div`
   right: ${(props) =>
     props.theme.id === 1 ? "43px" : props.theme.id === 2 ? "23px" : "4px"};
   position: absolute;
-  transition: right 0.3s linear;
+  transition: right 0.3s linear, background-color 0.3s linear;
 `;
 const Options = styled.div`
   display: flex;
@@ -45,6 +47,7 @@ const ThemeText = styled.p`
 `;
 
 const Toggler = ({ toggleHandler }) => {
+  const clickHandler = (e) => {};
   return (
     <div className="toggleSection">
       <ThemeText>THEME</ThemeText>
@@ -54,7 +57,10 @@ const Toggler = ({ toggleHandler }) => {
           <span onClick={() => toggleHandler("white")}>2</span>
           <span onClick={() => toggleHandler("purple")}>3</span>
         </Options>
-        <ToggleContainer>
+        <ToggleContainer onClick={clickHandler}>
+          <span className="selector" onClick={() => toggleHandler("blue")} />
+          <span className="selector" onClick={() => toggleHandler("white")} />
+          <span className="selector" onClick={() => toggleHandler("purple")} />
           <Switch />
         </ToggleContainer>
       </div>

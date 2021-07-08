@@ -1,10 +1,19 @@
 .App {
-  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .calculator {
   width: 500px;
-  margin: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .toggleSection {
@@ -14,4 +23,9 @@
 }
 .toggleBox {
   width: 60px;
+}
+.selector {
+  width: 33%;
+  height: 100%;
+  display: block;
 }

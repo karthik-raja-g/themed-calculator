@@ -8,7 +8,7 @@ import GlobalStyles from "./theme/GlobalStyles";
 import Keypad from "./elements/keypad";
 import Screen from "./elements/screen";
 import keys from "./keys";
-import Toggler from "./components/toggler";
+import Header from "./components/header";
 
 function App() {
   const [theme, setTheme] = useState(themes.blue);
@@ -18,7 +18,7 @@ function App() {
       <GlobalStyles />
       <div className="App">
         <div className="calculator">
-          <Toggler toggleHandler={toggleTheme} />
+          <Header toggleHandler={toggleTheme}/>
           <Screen>324,523</Screen>
           <Keypad>
             {keys.map((val, index) => {

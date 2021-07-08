@@ -7,6 +7,11 @@
   margin: auto;
 }
 
+.toggleSection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
 .toggleBox {
   width: 60px;
 }

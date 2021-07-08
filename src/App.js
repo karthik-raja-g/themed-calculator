@@ -12,12 +12,13 @@ import Toggler from "./components/toggler";
 
 function App() {
   const [theme, setTheme] = useState(themes.blue);
+  const toggleTheme = (theme) => setTheme(themes[theme]);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <div className="App">
         <div className="calculator">
-          <Toggler/>
+          <Toggler toggleHandler={toggleTheme} />
           <Screen>324,523</Screen>
           <Keypad>
             {keys.map((val, index) => {
@@ -36,15 +37,6 @@ function App() {
             })}
           </Keypad>
         </div>
-        <NumberButton clickHandler={() => setTheme(themes.blue)}>
-          blue
-        </NumberButton>
-        <NumberButton clickHandler={() => setTheme(themes.white)}>
-          white
-        </NumberButton>
-        <NumberButton clickHandler={() => setTheme(themes.purple)}>
-          purple
-        </NumberButton>
       </div>
     </ThemeProvider>
   );

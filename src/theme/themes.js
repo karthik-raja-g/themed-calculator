@@ -1,9 +1,10 @@
 const themes = {
   blue: {
+    id: 1,
     backgrounds: {
       body: "hsl(222, 26%, 31%)",
       keypad: "hsl(223, 31%, 20%)",
-      toggleBox: "hsl(223, 31%, 20%)",
+      toggleSwitch: "hsl(6, 63%, 50%)",
       screen: "hsl(224, 36%, 15%)",
     },
     keys: {
@@ -30,10 +31,11 @@ const themes = {
     toggleSwitch: "hsl(0, 0%, 100%)",
   },
   white: {
+    id: 2,
     backgrounds: {
       body: "hsl(0, 0%, 90%)",
       keypad: "hsl(0, 5%, 81%)",
-      toggleBox: "hsl(0, 5%, 81%)",
+      toggleSwitch: "hsl(25, 98%, 40%)",
       screen: "hsl(0, 0%, 93%)",
     },
     keys: {
@@ -60,10 +62,11 @@ const themes = {
     toggleSwitch: "hsl(0, 0%, 100%)",
   },
   purple: {
+    id: 3,
     backgrounds: {
       body: "hsl(268, 75%, 9%)",
       keypad: "hsl(268, 71%, 12%)",
-      toggleBox: "hsl(268, 71%, 12%)",
+      toggleSwitch: "hsl(176, 100%, 44%)",
       screen: "hsl(268, 71%, 12%)",
     },
     keys: {

@@ -9,6 +9,6 @@ export default Styled.section`
   display: grid;
   grid-template-columns: 25fr 25fr 25fr 25fr;
   padding: 35px;
-  grid-gap: 30px;
+  grid-gap: 25px;
   margin: auto;
 `;

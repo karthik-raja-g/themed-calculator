@@ -5,9 +5,9 @@ import LongButton from "./components/longButton";
 import { ThemeProvider } from "styled-components";
 import themes from "./theme/themes";
 import GlobalStyles from "./theme/GlobalStyles";
-import Keypad from "./elements/keypad";
+import Keypad from "./components/keypad";
 import Screen from "./elements/screen";
-import keys from "./keys";
+import { keys } from "./keys";
 import Header from "./components/header";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       <GlobalStyles />
       <div className="App">
         <div className="calculator">
-          <Header toggleHandler={toggleTheme}/>
+          <Header toggleHandler={toggleTheme} />
           <Screen>324,523</Screen>
           <Keypad>
             {keys.map((val, index) => {

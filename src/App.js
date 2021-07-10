@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useContext } from "react";
 import "./App.css";
+import { CalculatorContext } from "./context";
 import NumberButton from "./components/numberButton";
 import LongButton from "./components/longButton";
 import { ThemeProvider } from "styled-components";
-import themes from "./theme/themes";
 import GlobalStyles from "./theme/GlobalStyles";
 import Keypad from "./components/keypad";
 import Screen from "./elements/screen";
@@ -11,14 +11,16 @@ import { keys } from "./keys";
 import Header from "./components/header";
 
 function App() {
-  const [theme, setTheme] = useState(themes.blue);
-  const toggleTheme = (theme) => setTheme(themes[theme]);
+  const {
+    theme,
+    actions: { setTheme },
+  } = useContext(CalculatorContext);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <div className="App">
         <div className="calculator">
-          <Header toggleHandler={toggleTheme} />
+          <Header toggleHandler={setTheme} />
           <Screen>324,523</Screen>
           <Keypad>
             {keys.map((val, index) => {

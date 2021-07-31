@@ -13,4 +13,5 @@ export default Styled.div`
   justify-content: flex-end;
   padding: 0 35px;
   box-sizing: border-box;
+  position: relative;
 `

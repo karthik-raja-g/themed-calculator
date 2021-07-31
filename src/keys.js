@@ -45,11 +45,11 @@ const keys = [
   },
   {
     text: "-",
-    value: "minus",
+    value: "-",
   },
   {
     text: ".",
-    value: "decimal",
+    value: ".",
   },
   {
     text: "0",
@@ -57,11 +57,11 @@ const keys = [
   },
   {
     text: "/",
-    value: "divide",
+    value: "/",
   },
   {
     text: "x",
-    value: "multiply",
+    value: "*",
   },
   {
     text: "RESET",
@@ -73,30 +73,16 @@ const keys = [
   },
 ];
 
-const acceptedKeys = [
-  "0",
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  ".",
-  "*",
-  "/",
-  "+",
-  "-",
-  "=",
-  "Backspace",
-  "Delete",
-  "r",
-  "R",
-];
+const visibleKeys = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+const mathOperators = ["*", "/", "+", "-"];
+const operationKeys = ["=", "r", "R"];
+const clearKeys = ["Backspace", "Delete"];
 
 module.exports = {
   keys,
-  acceptedKeys,
+  visibleKeys,
+  operationKeys,
+  mathOperators,
+  clearKeys
 };

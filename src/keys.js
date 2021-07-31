@@ -74,7 +74,6 @@ const keys = [
 ];
 
 const visibleKeys = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
 const mathOperators = ["*", "/", "+", "-"];
 const operationKeys = ["=", "r", "R"];
 const clearKeys = ["Backspace", "Delete"];

@@ -1,11 +1,11 @@
-import React, { createContext, useReducer, useEffect } from "react";
-import { visibleKeys, operationKeys, mathOperators, clearKeys } from "../keys";
+import React, { createContext, useReducer } from "react";
+import { visibleKeys, mathOperators, clearKeys } from "../keys";
 
 const initialState = {
   screenValue: "",
   operation: "",
   result: "",
-  resultValue: ""
+  resultValue: "",
 };
 
 const calculate = (result, input, operation) => {
@@ -36,38 +36,49 @@ const reducer = (state = initialState, action) => {
       let isResult = false;
       let isMathOperation = false;
       let isClearKey = false;
-      // let isNegative = false;
-      if (visibleKeys.includes(value) && state.screenValue[0] !== "-") {
+      if (visibleKeys.includes(value)) {
         isScreenVal = true;
       }
       if (mathOperators.includes(value)) isMathOperation = true;
       if (value === ".") isDecimal = true;
       if (value === "=" || value === "result") isResult = true;
       if (clearKeys.includes(value)) isClearKey = true;
+
+      // For negative numbers
+      if (value === "-" && !state.screenValue && !state.resultValue) {
+        return {
+          ...state,
+          screenValue: "-",
+        };
+      }
+      // For screen content
       if (isScreenVal) {
         return {
           ...state,
           screenValue: `${state.screenValue}${value}`,
           result: state.operation ? state.result : "",
-          resultValue: ""
+          resultValue: "",
         };
       }
+      // For clearing the screen content
       if (isClearKey) {
         return {
           ...state,
           screenValue: state.screenValue.slice(0, -1),
         };
       }
+      // For handling decimal input
       if (isDecimal) {
         if (state.screenValue.includes(".")) return state;
-        const resultValue = state.screenValue.length
+        const decimalValue = state.screenValue.length
           ? `${state.screenValue}.`
           : "0.";
         return {
           ...state,
-          screenValue: resultValue,
+          screenValue: decimalValue,
         };
       }
+      // For handling math operators. Applies the operation to the result already in memory and updates it
       if (isMathOperation) {
         if (!state.screenValue.length && !state.result) return state;
         return {
@@ -75,32 +86,28 @@ const reducer = (state = initialState, action) => {
           operation: value,
           result: calculate(state.result, state.screenValue, value),
           screenValue: "",
-          resultValue: ""
+          resultValue: "",
         };
       }
+      // For calculating the final result
       if (isResult) {
-        console.log(state);
         let result = state.screenValue || state.result;
+        // if there's an operation pending in state when asked for result, the operation is applied
+        // to the existing result and updated along with the result value
         if (state.operation)
           result = calculate(state.result, state.screenValue, state.operation);
-        const x = {
+        return {
           ...state,
           result: result ? parseFloat(result) : "",
           screenValue: "",
           operation: "",
           resultValue: result ? parseFloat(result) : "",
         };
-        console.log(x);
-        return x;
+      }
+      if (value === "RESET") {
+        return initialState;
       }
       return state;
-    }
-    case "UPDATE_MEMORY": {
-      const { value } = action;
-      return {
-        ...state,
-        lastValue: value,
-      };
     }
     default:
       return state;
@@ -119,7 +126,6 @@ export const CalculatorProvider = (props) => {
       setValue,
     },
   };
-  // useEffect(() => {}, [state.lastValue, state.lastOperation]);
   return (
     <CalculatorContext.Provider value={context}>
       {props.children}

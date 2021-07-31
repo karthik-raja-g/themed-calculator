@@ -22,7 +22,7 @@ const AppScreen = () => {
   const { screenValue, operation, resultValue } = useContext(CalculatorContext);
   return (
     <Screen>
-      <Operation>{operations[operation]}</Operation>
+      <Operation>{resultValue ? "Result" : operations[operation]}</Operation>
       {resultValue || screenValue || "0"}
     </Screen>
   );

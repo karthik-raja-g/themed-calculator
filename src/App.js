@@ -1,20 +1,18 @@
 import { useContext } from "react";
 import "./App.css";
 import { CalculatorContext } from "./context";
+import { ThemeContext } from './context/theme'
 import NumberButton from "./components/numberButton";
 import LongButton from "./components/longButton";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./theme/GlobalStyles";
 import Keypad from "./components/keypad";
-import Screen from "./elements/screen";
+import Screen from "./components/screen";
 import { keys } from "./keys";
 import Header from "./components/header";
 
 function App() {
-  const {
-    theme,
-    actions: { setTheme },
-  } = useContext(CalculatorContext);
+  const { theme, setTheme } = useContext(ThemeContext);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />

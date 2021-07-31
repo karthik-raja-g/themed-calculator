@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { CalculatorProvider } from "./context";
+import { ThemeProvider } from "./context/theme";
 
 ReactDOM.render(
   <React.StrictMode>
-    <CalculatorProvider>
-      <App />
-    </CalculatorProvider>
+    <ThemeProvider>
+      <CalculatorProvider>
+        <App />
+      </CalculatorProvider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

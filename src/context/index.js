@@ -81,10 +81,12 @@ const reducer = (state = initialState, action) => {
       // For handling math operators. Applies the operation to the result already in memory and updates it
       if (isMathOperation) {
         if (!state.screenValue.length && !state.result) return state;
+        // If the state has an operation pending, it applies the operation to the existing
+        // result with current value
         return {
           ...state,
           operation: value,
-          result: calculate(state.result, state.screenValue, value),
+          result: calculate(state.result, state.screenValue, state.operation || value),
           screenValue: "",
           resultValue: "",
         };

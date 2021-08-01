@@ -15,6 +15,9 @@ const NumButton = Styled(Button)`
     props.value === "del" ? props.theme.text.function : props.theme.text.number};
   font-size: ${(props) => (props.value === "del" ? "1.25em" : "")};
 
+  @media(max-width: 330px) {
+    font-size: 1em;
+  }
 `;
 const NumberButton = ({ children, clickHandler, className, value }) => (
   <NumButton clickHandler={clickHandler} className={className} value={value}>

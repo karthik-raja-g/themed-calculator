@@ -21,13 +21,21 @@ const AppKeypad = () => {
       {keys.map((val, index) => {
         if (val.text === "RESET" || val.text === "=") {
           return (
-            <LongButton key={index} type={val.value}>
+            <LongButton
+              key={index}
+              type={val.value}
+              clickHandler={() => setValue(val.text)}
+            >
               {val.text}
             </LongButton>
           );
         }
         return (
-          <NumberButton key={index} value={val.value}>
+          <NumberButton
+            key={index}
+            value={val.value}
+            clickHandler={() => setValue(val.value)}
+          >
             {val.text}
           </NumberButton>
         );

@@ -8,6 +8,10 @@ const LongBtn = Styled(Button)`
   color: ${(props) => props.theme.text[props.type]};
   font-size: ${(props) => (props.type === "function" ? "1.25em" : "")};
   grid-column-start: span 2;
+
+  @media(max-width: 330px) {
+    font-size: 1em;
+  }
 `;
 const LongButton = ({ children, clickHandler, className, type }) => (
   <LongBtn clickHandler={clickHandler} className={className} type={type}>

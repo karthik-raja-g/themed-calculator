@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Button from "../elements/button";
+import Styled from "styled-components";
 
+const Btn = Styled(Button)`
+  border-top: ${(props) => props.clicked ? '4px solid transparent' : ''};
+`;
 const AppButton = ({ children, clickHandler, className }) => {
   const [clicked, setClicked] = useState(false);
   const handleClick = () => {
@@ -13,9 +17,9 @@ const AppButton = ({ children, clickHandler, className }) => {
     }
   }, [clicked]);
   return (
-    <Button onClick={handleClick} clicked={clicked} className={className}>
+    <Btn onClick={handleClick} clicked={clicked} className={className}>
       {children}
-    </Button>
+    </Btn>
   );
 };
 

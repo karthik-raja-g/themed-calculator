@@ -29,11 +29,11 @@ const keys = [
   },
   {
     text: "+",
-    value: "plus",
+    value: "+",
   },
   {
     text: "1",
-    value: "",
+    value: "1",
   },
   {
     text: "2",
@@ -76,7 +76,7 @@ const keys = [
 const visibleKeys = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const mathOperators = ["*", "/", "+", "-"];
 const operationKeys = ["=", "r", "R"];
-const clearKeys = ["Backspace", "Delete"];
+const clearKeys = ["Backspace", "Delete", "del"];
 
 module.exports = {
   keys,

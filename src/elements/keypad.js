@@ -11,4 +11,9 @@ export default Styled.section`
   padding: 35px;
   grid-gap: 25px;
   margin: auto;
+
+  @media(max-width: 425px) {
+    padding: 20px;
+    grid-gap: 17px;
+  }
 `;

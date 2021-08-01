@@ -3,8 +3,6 @@ import Styled from "styled-components";
 export default Styled.button`
   border-radius: 8px;
   border: none;
-  border-bottom: 4px solid;
-  background-color: red;
   outline: none;
   height: 55px;
   font-size: 1.5rem;

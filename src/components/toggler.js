@@ -47,7 +47,6 @@ const ThemeText = styled.p`
 `;
 
 const Toggler = ({ toggleHandler }) => {
-  const clickHandler = (e) => {};
   return (
     <div className="toggleSection">
       <ThemeText>THEME</ThemeText>
@@ -57,7 +56,7 @@ const Toggler = ({ toggleHandler }) => {
           <span onClick={() => toggleHandler("white")}>2</span>
           <span onClick={() => toggleHandler("purple")}>3</span>
         </Options>
-        <ToggleContainer onClick={clickHandler}>
+        <ToggleContainer>
           <span className="selector" onClick={() => toggleHandler("blue")} />
           <span className="selector" onClick={() => toggleHandler("white")} />
           <span className="selector" onClick={() => toggleHandler("purple")} />

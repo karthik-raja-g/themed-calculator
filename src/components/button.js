@@ -3,7 +3,11 @@ import Button from "../elements/button";
 import Styled from "styled-components";
 
 const Btn = Styled(Button)`
-  border-top: ${(props) => props.clicked ? '4px solid transparent' : ''};
+  position: relative;
+  top: ${(props) => (!props.clicked ? 0 : "2px")};
+  ${(props) =>
+    props.clicked ? `box-shadow: 0 0.2em rgba(0, 0, 0, 0.4) !important` : ""}
+  ;
 `;
 const AppButton = ({ children, clickHandler, className }) => {
   const [clicked, setClicked] = useState(false);

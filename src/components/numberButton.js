@@ -7,13 +7,15 @@ const NumButton = Styled(Button)`
     props.value === "del"
       ? props.theme.keys.function.body
       : props.theme.keys.number.body};
-  border-bottom: 4px solid ${(props) =>
+  color: ${(props) =>
+    props.value === "del"
+      ? props.theme.text.function
+      : props.theme.text.number};
+  font-size: ${(props) => (props.value === "del" ? "1.25em" : "")};
+  box-shadow: 0 4px ${(props) =>
     props.value === "del"
       ? props.theme.keys.function.shadow
-      : props.theme.keys.number.shadow};
-  color: ${(props) =>
-    props.value === "del" ? props.theme.text.function : props.theme.text.number};
-  font-size: ${(props) => (props.value === "del" ? "1.25em" : "")};
+      : props.theme.keys.number.shadow}, 0 1px rgba(0, 0, 0, 0.4);
 
   @media(max-width: 330px) {
     font-size: 1em;

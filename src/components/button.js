@@ -6,7 +6,9 @@ const Btn = Styled(Button)`
   position: relative;
   top: ${(props) => (!props.clicked ? 0 : "2px")};
   ${(props) =>
-    props.clicked ? `box-shadow: 0 0.2em rgba(0, 0, 0, 0.4) !important` : ""}
+    props.clicked
+      ? `box-shadow: 0 2px ${props.theme.backgrounds.keypad} !important`
+      : ""}
   ;
 `;
 const AppButton = ({ children, clickHandler, className }) => {

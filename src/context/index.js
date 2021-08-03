@@ -13,18 +13,24 @@ const calculate = (result, input, operation) => {
   if (!input) return parseFloat(result);
   const lv = parseFloat(result);
   const ip = parseFloat(input);
+  let output = 0
   switch (operation) {
     case "/":
-      return lv / ip;
+      output = lv / ip;
+      break;
     case "*":
-      return lv * ip;
+      output = lv * ip;
+      break;
     case "+":
-      return lv + ip;
+      output = lv + ip;
+      break;
     case "-":
-      return lv - ip;
+      output = lv - ip;
+      break;
     default:
-      return ip;
+      output = ip;
   }
+  return Math.round(output * 100) / 100
 };
 
 const reducer = (state = initialState, action) => {

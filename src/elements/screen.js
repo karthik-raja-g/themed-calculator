@@ -14,4 +14,6 @@ export default Styled.div`
   padding: 0 35px;
   box-sizing: border-box;
   position: relative;
-`
+  overflow: auto;
+  letter-spacing: -4px;
+`;

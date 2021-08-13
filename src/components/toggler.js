@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 const ToggleContainer = styled.div`
@@ -21,10 +21,10 @@ const Switch = styled.div`
   border-radius: 50%;
   background-color: ${(props) => props.theme.backgrounds.toggleSwitch};
   top: 4px;
-  right: ${(props) =>
-    props.theme.id === 1 ? "43px" : props.theme.id === 2 ? "23px" : "4px"};
+  left: ${(props) =>
+    props.theme.id === 1 ? "4px" : props.theme.id === 2 ? "23px" : "43px"};
   position: absolute;
-  transition: right 0.3s linear, background-color 0.3s linear;
+  transition: left 0.3s linear, background-color 0.3s linear;
 `;
 const Options = styled.div`
   display: flex;
@@ -47,20 +47,78 @@ const ThemeText = styled.p`
 `;
 
 const Toggler = ({ toggleHandler }) => {
+  const [isSwitchClicked, setIsSwitchClicked] = useState(false);
+  const [togglerPos, setTogglerPos] = useState(0);
+  const [pos, setPos] = useState(4);
+  const contRef = useRef(null);
+  const themes = ["blue", "white", "purple"];
+
+  const handleMove = (e) => {
+    if (isSwitchClicked) setPos(e.pageX - togglerPos - 10);
+  };
+
+  const toggleByClick = (color) => {
+    switch (color) {
+      case "blue": {
+        setPos(4);
+        break;
+      }
+      case "white": {
+        setPos(23);
+        break;
+      }
+      case "purple": {
+        setPos(43);
+        break;
+      }
+      default:
+        return;
+    }
+  };
+
+  /* When the switch position comes within certain ranges, specific theme is
+   applied. Important thing here is that the final position of the switch
+   is not decided by mouse movement, but rather the selected theme. */
+  useEffect(() => {
+    if (pos <= 4) {
+      toggleHandler("blue");
+    }
+    if (pos > 4 && pos < 24) {
+      toggleHandler("white");
+    }
+    if (pos >= 24) {
+      toggleHandler("purple");
+    }
+  }, [pos, toggleHandler]);
+
+  // Gets toggle container position initially
+  useEffect(() => {
+    setTogglerPos(contRef.current.offsetLeft);
+  }, []);
+
   return (
     <div className="toggleSection">
       <ThemeText>THEME</ThemeText>
       <div className="toggleBox">
         <Options>
-          <span onClick={() => toggleHandler("blue")}>1</span>
-          <span onClick={() => toggleHandler("white")}>2</span>
-          <span onClick={() => toggleHandler("purple")}>3</span>
+          {themes.map((theme, index) => (
+            <span onClick={() => toggleByClick(theme)}>{index + 1}</span>
+          ))}
         </Options>
-        <ToggleContainer>
-          <span className="selector" onClick={() => toggleHandler("blue")} />
-          <span className="selector" onClick={() => toggleHandler("white")} />
-          <span className="selector" onClick={() => toggleHandler("purple")} />
-          <Switch />
+        <ToggleContainer
+          onMouseLeave={() => setIsSwitchClicked(false)}
+          onMouseMove={handleMove}
+          ref={contRef}
+        >
+          {themes.map((theme) => (
+            <span className="selector" onClick={() => toggleByClick(theme)} />
+          ))}
+          <Switch
+            onMouseDown={() => setIsSwitchClicked(true)}
+            onMouseUp={() => setIsSwitchClicked(false)}
+            onTouchStart={() => setIsSwitchClicked(true)}
+            onTouchEnd={() => setIsSwitchClicked(false)}
+          />
         </ToggleContainer>
       </div>
     </div>

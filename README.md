@@ -8,4 +8,4 @@ Built with React using styled-components and Context api
 - Use the last calculated result
 - Display's current operation name
 
-[check it out here](https://themed-calculator-bfeyhsjrv-karthik-raja-g.vercel.app/)
+[check it out here](https://themed-calculator.vercel.app/)

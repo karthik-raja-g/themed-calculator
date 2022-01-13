@@ -12,8 +12,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .github-link {
-    position: absolute;
-    bottom: 4%;
+    /* position: absolute;
+    bottom: 4%; */
     filter: ${({ theme }) => (theme.id === 3 ? `invert(1)` : "")};
 }
 `;
